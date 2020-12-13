@@ -13,7 +13,7 @@ public class VariableResolver {
     private VariableConfigCache variableConfigCache;
     private VariableGroupProcessors groupProcessors;
 
-    public Variables fetchActive(int bizType, Input input) {
+    public Variables processActive(int bizType, Input input) {
         List<VariableConfig> variableConfigList = variableConfigCache.getActive(bizType);
         Map<String, List<VariableConfig>> groupBySourceType = variableConfigList.stream()
                 .collect(Collectors.groupingBy(VariableConfig::getSourceType));
